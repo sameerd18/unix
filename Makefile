@@ -2,9 +2,13 @@
 all: test
 
 .PHONY: test
+
 test:: true
 	./true
 
+test:: false
+	! ./false
+
 .PHONY: clean
 clean::
-	$(RM) true
+	$(RM) true false
