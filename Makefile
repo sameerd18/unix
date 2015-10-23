@@ -1,3 +1,6 @@
+CFLAGS:= -std=c11
+SHELL:= /bin/bash
+
 .PHONY: all
 all: test
 
@@ -9,6 +12,18 @@ test:: true
 test:: false
 	! ./false
 
+test:: echo
+	./echo | diff TestExpected/EchoWithoutArg.txt -
+
+test:: echo
+	./echo hello | diff TestExpected/EchoWith1Arg.txt -
+
+test:: echo
+	./echo hello world | diff TestExpected/EchoWith2Args.txt -
+
+test:: echo
+	./echo hello world hi | diff TestExpected/EchoWith3Args.txt -
+
 .PHONY: clean
 clean::
-	$(RM) true false
+	$(RM) $$(<.gitignore)
