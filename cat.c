@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
     if (argc < 2)
         cat(stdin);
     else
-        catFile(argv[1]);
+        while (*++argv)
+            catFile(*argv);
     return hadErrors ? EXIT_FAILURE : EXIT_SUCCESS;
 }

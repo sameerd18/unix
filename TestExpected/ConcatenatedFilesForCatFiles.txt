@@ -1,0 +1,2 @@
+This is file 1 for cat
+This is a file 2 for cat
