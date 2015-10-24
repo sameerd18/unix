@@ -2,10 +2,11 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc > 1)
-        printf("%s", argv[1]);
+    size_t i = 1;
+    if (i < argc)
+        printf("%s", argv[i]);
 
-    for (size_t i = 2; argc > i; i++)
+    while (++i < argc)
         printf(" %s", argv[i]);
 
     printf("\n");
