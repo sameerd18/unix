@@ -1,4 +1,4 @@
-CFLAGS:= -std=c11
+CFLAGS:= -std=c11 -W -Wall -pedantic -Werror
 SHELL:= /bin/bash
 
 .PHONY: all

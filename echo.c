@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[])
 {
-    size_t i = 1;
+    int i = 1;
     if (i < argc)
         printf("%s", argv[i]);
 
