@@ -24,6 +24,15 @@ test:: echo
 test:: echo
 	./echo hello world hi | diff TestExpected/EchoWith3Args.txt -
 
+test:: cat
+	./cat < /dev/null | diff /dev/null -
+
+test:: cat
+	./cat < TestExpected/FileForCat.txt | diff TestExpected/FileForCat.txt -
+
+test:: cat
+	./cat < TestExpected/FileForCatString.txt | diff TestExpected/FileForCatString.txt -
+
 .PHONY: clean
 clean::
 	$(RM) $$(<.gitignore)
