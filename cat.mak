@@ -2,7 +2,7 @@ test:: cat
 	./cat < /dev/null | diff /dev/null -
 
 test:: cat
-	./cat < TestExpected/FileForCat.txt | diff TestExpected/FileForCat.txt -
+	./cat < TestExpected/FileWithOneChar.txt | diff TestExpected/FileWithOneChar.txt -
 
 test:: cat
 	./cat < TestExpected/FileForCatString.txt | diff TestExpected/FileForCatString.txt -
