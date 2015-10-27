@@ -1,10 +1,5 @@
-#include <err.h>
-#include <errno.h>
-#include <stdbool.h>
+#include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
-
-bool hadErrors = false;
 
 void head(FILE *f)
 {
@@ -15,25 +10,4 @@ void head(FILE *f)
     }
 }
 
-void headFile(char *filename)
-{
-    FILE *f = fopen(filename, "r");
-    if (f) {
-        head(f);
-        fclose(f);
-    }
-    if (errno) {
-        hadErrors = true;
-        warn("%s", filename);
-    }
-}
-
-int main(int argc, char *argv[])
-{
-    if (argc < 2)
-        head(stdin);
-    else
-        while (*++argv)
-            headFile(*argv);
-    return hadErrors ? EXIT_FAILURE : EXIT_SUCCESS;
-}
+void (*run)(FILE *) = head;
