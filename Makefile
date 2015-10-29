@@ -6,6 +6,7 @@ all: test
 
 cat: main.o cat.o
 head: main.o head.o
+tail: main.o tail.o
 
 .PHONY: test
 

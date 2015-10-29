@@ -3,4 +3,5 @@ cat
 echo
 false
 head
+tail
 true
