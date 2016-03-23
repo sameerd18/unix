@@ -47,7 +47,7 @@ void run(struct Runner *runner, void (*testcase)(void))
 
 void failingTestCase(void)
 {
-    assert(true);
+    assert(false);
 }
 
 void givenFailingTestCase_whenRunningIt_thenFailsTest(void)
