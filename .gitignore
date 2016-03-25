@@ -3,5 +3,7 @@ cat
 echo
 false
 head
+kill
+sleep
 tail
 true
