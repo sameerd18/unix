@@ -6,6 +6,8 @@ all: test sleep kill
 
 cat: main.o cat.o
 head: main.o head.o
+kill: kill.o proglib.o
+sleep: sleep.o proglib.o
 tail: main.o tail.o
 
 .PHONY: test
