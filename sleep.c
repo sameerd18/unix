@@ -11,7 +11,7 @@ int atoi_e(char *nstr)
     char *endptr;
 
     errno = 0;
-    int retval = strtol(nstr, &endptr, 0);
+    int retval = strtol(nstr, &endptr, 10);
 
     if (errno == 0 && *endptr != '\0')
         errno = EINVAL;
