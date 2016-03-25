@@ -1,11 +1,9 @@
-#include "proglib.h"
 #include <err.h>
 #include <errno.h>
-#include <signal.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
-#include <sys/types.h>
+
+#include "proglib.h"
 
 int atoi_e(char *nstr)
 {
