@@ -2,7 +2,7 @@ CFLAGS:= -std=c11 -W -Wall -pedantic -Werror -MMD
 SHELL:= /bin/bash
 
 .PHONY: all
-all: test sleep kill
+all: test sleep kill unkillable
 
 cat: main.o cat.o
 head: main.o head.o
