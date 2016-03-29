@@ -4,6 +4,7 @@ echo
 false
 head
 kill
+ls
 sleep
 tail
 true
