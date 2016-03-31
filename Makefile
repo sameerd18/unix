@@ -1,4 +1,4 @@
-CFLAGS:= -std=c11 -W -Wall -pedantic -Werror -MMD
+CFLAGS:= -std=c11 -std=c99 -W -Wall -pedantic -Werror -MMD
 SHELL:= /bin/bash
 
 .PHONY: all
@@ -9,6 +9,7 @@ head: main.o head.o
 kill: kill.o proglib.o
 sleep: sleep.o proglib.o
 tail: main.o tail.o
+ls: ls.o proglib.o
 
 .PHONY: test
 
