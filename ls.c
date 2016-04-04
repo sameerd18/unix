@@ -30,7 +30,7 @@ void print_dirlist(int count, char **dirlist)
 {
 
     for (int i = 0; i < count; i++)
-        printf("%s\n", dirlist[i]);
+        puts(dirlist[i]);
 }
 
 char** put_direntries(int count, char **dirlist, DIR *dir)
