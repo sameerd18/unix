@@ -4,7 +4,7 @@ SHELL:= /bin/bash
 .PHONY: all
 all: hello
 
-hello: hello.c mylib.a
+hello: hello.o mylib.a
 mylib.a: mylib.a(greet.o target.o)
 
 .PHONY: clean

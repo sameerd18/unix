@@ -1,7 +1,14 @@
+#include <stdio.h>
 
-void main(void)
+#include "greet.h"
+#include "target.h"
+
+int main(void)
 {
     greet();
+    printf(", ");
     target();
+    printf("!\n");
+    return 0;
 }
 
