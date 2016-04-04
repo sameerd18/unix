@@ -26,14 +26,15 @@ int get_direntries(DIR *dir)
     return count;
 }
 
-void lsdir(DIR *dir)
+void print_dirlist(int count, char **dirlist)
 {
-    int count = get_direntries(dir);
-    char **dirlist = malloc(count * sizeof(char*));
 
-    if (!dirlist)
-        err(EXIT_FAILURE, NULL);
+    for (int i = 0; i < count; i++)
+        printf("%s\n", dirlist[i]);
+}
 
+char** put_direntries(int count, char **dirlist, DIR *dir)
+{
     for (int i = 0; i < count; i++) {
         struct dirent *entry = readdir(dir);
         if (!entry) {
@@ -42,12 +43,19 @@ void lsdir(DIR *dir)
         }
         dirlist[i] = entry->d_name;
     }
+    return dirlist;
+}
 
-    qsort(dirlist, count, sizeof(char *), strcmp_v);
+void lsdir(DIR *dir)
+{
+    char **dirlist = malloc(get_direntries(dir) * sizeof(char*));
 
-    for (int i = 0; i < count; i++)
-        printf("%s\n", dirlist[i]);
+    if (!dirlist)
+        err(EXIT_FAILURE, NULL);
 
+    dirlist = put_direntries(get_direntries(dir), dirlist, dir);
+    qsort(dirlist, get_direntries(dir), sizeof(char *), strcmp_v);
+    print_dirlist(get_direntries(dir), dirlist);
     free(dirlist);
 }
 
